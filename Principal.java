@@ -8,11 +8,11 @@ public class Principal{
         String apellidos;
         int edad;
 
-        System.out.print("Nombre: ");
+        System.out.print("Nombre:");
         nombre = sc.nextLine();
-        System.out.print("Apellidos: ");
+        System.out.print("Apellidos:");
         apellidos = sc.nextLine();
-        System.out.print("Edad: ");
+        System.out.print("Edad:");
         edad = sc.nextInt();
 
         /*
@@ -23,6 +23,7 @@ public class Principal{
         */
 
         Usuario nuevo = new Usuario(nombre, apellidos, edad);
+
 
         System.out.println(nuevo);
 
