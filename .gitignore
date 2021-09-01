@@ -1,1 +1,4 @@
 *.class
+Controlador/*.class
+Modelo/*.class
+Vista/*.class
