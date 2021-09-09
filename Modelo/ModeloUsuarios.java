@@ -1,17 +1,34 @@
 package Modelo;
 
+import java.util.ArrayList;
+
+import DataObjects.Usuario;
+
 public class ModeloUsuarios{
 
     //ArrayList - Crear una lista de objetos (object, int, float, ....)
 
-    public ModeloUsuarios(){
+    private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
+    public ModeloUsuarios(){
+        //Metodo add, agregar un elemento al final de la lista
+        //Administrador
+        usuarios.add(new Usuario("alan","1234","Alan Diaz", 1));
     }
 
-    public boolean login(String user, String pass){    
-        if(user.equals("alan") && pass.equals("1234"))
-            return true;
-        return false;
+    public Usuario login(String user, String pass){  
+        //metodo size, darme el numero de elementos de la lista
+        for(int i=0;i<usuarios.size();i++){//Recorriendo la lista
+            //El metodo get, me da el elemento que esta en la posicion i de la lista
+            if(usuarios.get(i).getUser().equals(user) && usuarios.get(i).getPass().equals(pass)){
+                return usuarios.get(i);
+            }
+        }
+        return null;
+    }
+
+    public void alta(Usuario usuario){
+        this.usuarios.add(usuario);
     }
 
 }
