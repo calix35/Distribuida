@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 import Vista.Login;
 import Modelo.ModeloUsuarios;
+import Modelo.ModeloProductos;
 import DataObjects.Usuario;
 
 public class CtrlPrincipal{
     private Scanner sc = new Scanner(System.in);
     private Login login = new Login(sc);
     private ModeloUsuarios modeloUsuarios = new ModeloUsuarios();
+    private ModeloProductos modeloProductos = new ModeloProductos();
 
 
     public CtrlPrincipal(){
@@ -22,6 +24,7 @@ public class CtrlPrincipal{
                         new CtrlAdministrador(sc, modeloUsuarios);
                         break;
                     case 2://Vendedor
+                        new CtrlVentas(sc, modeloProductos);
                         break;
                 }
                 //Login correcto
