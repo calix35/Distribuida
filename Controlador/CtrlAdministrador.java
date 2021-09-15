@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import Vista.MenuAdministrador;
 import Vista.AltaUsuarios;
+import Vista.BajaUsuarios;
 import Modelo.ModeloUsuarios;
 
 public class CtrlAdministrador{
@@ -23,6 +24,19 @@ public class CtrlAdministrador{
                     modeloUsuarios.alta(alta.getUsuario());                    
                     break;
                 case 2://Bajas
+                    BajaUsuarios baja =  new BajaUsuarios(sc);
+                    boolean existe;
+                    do{
+                        baja.show();
+                        existe = modeloUsuarios.buscarUsuario(baja.getUsuario());
+                        if(existe){
+                            //Existe el usuario
+                            modeloUsuarios.eliminar(baja.getUsuario());
+                            //baja.setMsg("Se da de baja!");
+                        }else{
+                            baja.setMsg("Usuario inexistente. Intenta de nuevo!");
+                        }
+                    }while(!existe);
                     break;
                 case 3://Salir
                     break;

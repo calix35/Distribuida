@@ -31,4 +31,23 @@ public class ModeloUsuarios{
         this.usuarios.add(usuario);
     }
 
+    public boolean buscarUsuario(String user){
+        for(int i=0; i<this.usuarios.size(); i++){
+            if(this.usuarios.get(i).getUser().equals(user)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void eliminar(String user){
+        for(int i=0; i<this.usuarios.size(); i++){
+            if(this.usuarios.get(i).getUser().equals(user)){
+                this.usuarios.remove(i);
+                return;
+            }
+        }
+        
+    }
+
 }
