@@ -14,6 +14,7 @@ public class ModeloUsuarios{
         //Metodo add, agregar un elemento al final de la lista
         //Administrador
         usuarios.add(new Usuario("alan","1234","Alan Diaz", 1));
+        usuarios.add(new Usuario("ventas","ventas","ventas", 2));
     }
 
     public Usuario login(String user, String pass){  

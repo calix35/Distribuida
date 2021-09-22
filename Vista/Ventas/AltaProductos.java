@@ -1,4 +1,4 @@
-package Vista;
+package Vista.Ventas;
 
 import java.util.Scanner;
 import DataObjects.Producto;

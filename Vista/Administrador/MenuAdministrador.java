@@ -1,4 +1,4 @@
-package Vista;
+package Vista.Administrador;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Vista;
+package Vista.Administrador;
 
 import java.util.Scanner;
 import DataObjects.Usuario;
@@ -23,5 +23,9 @@ public class AltaUsuarios{
         System.out.print("Tipo: ");
         tipo = sc.nextInt();
         this.usuario = new Usuario(user, pass, nombre, tipo);
+    }
+
+    public void setMsg(String msg){
+        System.out.println(msg);
     }
 }

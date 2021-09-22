@@ -2,9 +2,9 @@ package Controlador;
 
 import java.util.Scanner;
 
-import Vista.MenuAdministrador;
-import Vista.AltaUsuarios;
-import Vista.BajaUsuarios;
+import Vista.Administrador.MenuAdministrador;
+import Vista.Administrador.AltaUsuarios;
+import Vista.Administrador.BajaUsuarios;
 import Modelo.ModeloUsuarios;
 
 public class CtrlAdministrador{
@@ -16,16 +16,20 @@ public class CtrlAdministrador{
         this.sc = sc;
         this.modeloUsuarios = modeloUsuarios;
         MenuAdministrador menuAdm = new MenuAdministrador(sc);
+        boolean existe;
         do{
             menuAdm.show();
             switch(menuAdm.getOpcion()){
                 case 1://Altas de Usuarios
                     AltaUsuarios alta = new AltaUsuarios(sc);
-                    modeloUsuarios.alta(alta.getUsuario());                    
+                    existe = modeloUsuarios.buscarUsuario(alta.getUsuario().getUser());
+                    if(existe)
+                        alta.setMsg("El usuario ya existe!");
+                    else
+                        modeloUsuarios.alta(alta.getUsuario());                    
                     break;
                 case 2://Bajas
-                    BajaUsuarios baja =  new BajaUsuarios(sc);
-                    boolean existe;
+                    BajaUsuarios baja =  new BajaUsuarios(sc);                    
                     do{
                         baja.show();
                         existe = modeloUsuarios.buscarUsuario(baja.getUsuario());
